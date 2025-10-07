@@ -1,0 +1,539 @@
+/* .box {
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 20px;
+  width: 250px;
+  height: 350px;
+  background-color: #a020f0; /* purple */
+/* clip-path: polygon(29% 0, 51% 11.7%, 100% 11.7%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 0% 70%, 0% 35%, 0 0); */
+
+/* } */
+
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@300..700&family=Comic+Relief:wght@400;700&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alan Sans", sans-serif;
+}
+
+body {
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+
+.navParent {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.navbar {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  padding: 15px 30px;
+  justify-content: baseline;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 16px;
+  color: #bbb;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.nav-links li:hover {
+  color: #d2ff00;
+}
+
+.nav-links li.active {
+  color: #d2ff00;
+}
+
+.nav-links li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #d2ff00;
+  border-radius: 10px;
+}
+.nav-links li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #d2ff00;
+  border-radius: 10px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.wallet-btn {
+  background-color: transparent;
+  border: 1px solid #d2ff00;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wallet-btn:hover {
+  background-color: #d2ff00;
+  color: #000;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+  padding: 60px 80px;
+  background-color: #111111;
+  position: relative;
+  padding: 0px 10px;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.hero-top {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.hero-top h1 {
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 1.2;
+  line-height: 40px;
+}
+
+.hero-top h2 span {
+  color: #d2ff00;
+  font-weight: 100;
+}
+
+.hero-top h2 {
+  font-size: 80px;
+  font-weight: 300;
+  margin: 10px 0 20px;
+  line-height: 50px;
+}
+
+.hero-center {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-center-right img {
+  width: 150px;
+}
+
+.hero-centerP {
+  font-size: 14px;
+  color: #bbb;
+  max-width: 250px;
+}
+
+.ape-bg{
+    width: 40%;
+}
+
+@media (max-width: 1500px) {
+    .ape-bg{
+        width: 55%;
+    }
+}
+@media (max-width: 1600px) {
+    .ape-bg{
+        width: 50%;
+    }
+}
+@media (max-width: 1300px) {
+    .ape-bg{
+        width: 55%;
+    }
+}
+@media (max-width: 1100px) {
+    .ape-bg{
+        width: 60%;
+    }
+}
+@media (max-width: 900px) {
+    .navbar{
+        padding: 20px 12px;
+    }
+
+    .wallet-btn{
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+
+    .search-icon{
+        font-size: 16px;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .logo{
+        font-size: 23px;
+    }
+
+    .hero{
+        height: 1300px;
+        
+    }
+
+    .hero-content h1{
+        line-height: 70px;
+        font-size: 40px;
+    }
+    .hero-content h2{
+        line-height: 70px;
+        font-size: 60px;
+    }
+
+
+
+    .hero-center{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .hero-content{
+        top: 0;
+        
+        
+    }
+    .hero-top{
+        margin-top: 150px;
+        padding: 2px;
+    }
+    .hero-right{
+        display: flex;
+    }
+}
+
+
+.ape-bg img {
+  width: 100%;
+}
+
+
+.stat{
+    padding: 20px 12px;
+    border-bottom: 2px solid white;
+}
+
+.stat h3 {
+  font-size: 35px;
+  font-weight: 400;
+  color: white;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ===== Auctions Section ===== */
+.auctions {
+  padding: 80px 80px;
+  background-color: #0e0e0e;
+}
+
+.auctions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto ;
+  margin-bottom: 50px;
+}
+
+.auctions-header h3 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.trend-aucs{
+    position: relative;
+}
+
+.trend-aucs img{
+    position: absolute;
+}
+
+.highlight {
+  color: #d2ff00;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.auctionPara {
+  color: #bbb;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-btn {
+  background-color: #1a1a1a;
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow-btn.right {
+  background-color: #fff;
+  color: #000;
+}
+
+.arrow-btn:hover {
+  opacity: 0.8;
+}
+
+/* ===== Cards ===== */
+.auction-cards {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.card-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.badge {
+  background-color: #d2ff00;
+  color: #000;
+  padding: 8px 12px;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  font-weight: 400;
+  font-size: 14px;
+  z-index: 9;
+  border-radius: 4px;
+}
+
+
+
+.badge.orange {
+  background-color: #ff7c00;
+  color: #fff;
+}
+
+.timer {
+  color: #aaa;
+  position: absolute;
+  right: 60px;
+  font-size: 14px;
+  top: 5px;
+  text-align: start;
+}
+
+
+
+.card-footer {
+  position: absolute;
+  z-index: 99;
+  bottom: 10px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 15px;
+}
+
+.card-footerImg{
+  width: 15px;
+}
+
+.card-footer p {
+  font-size: 14px;
+}
+
+.trend-aucs{
+    position: relative;
+}
+
+.trend-aucs img{
+    position: absolute;
+    top: 0;
+    right: -130px;
+    width: 150px;
+}
+
+.designs{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    padding-top: 30px;
+   clip-path: polygon(30% 0%, 47% 10%, 100% 10%, 100% 100%, 0 100%, 0% 60%, 0 0);
+
+
+}
+
+
+.purpleDiv{
+  background-color: #8c01fa;
+}
+.yellowDiv{
+  background-color: #d5f903 ;
+}
+.orangeDiv{
+  background-color: #f96a02 ;
+}
+.purpleBtn{
+ box-shadow:4px 4px 1px #8c01fa;
+}
+.yellowBtn{
+  box-shadow:4px 4px 1px #d5f903 ;
+}
+.orangeBtn{
+    box-shadow: 4px 4px 1px #f96a02;
+
+}
+
+.monkey{
+  width: 300px;
+  margin-top: 15px;
+}
+
+.bidBtn{
+  background-color: #1a1a1a;
+  position: absolute;
+  bottom: -60px;
+  border: none;
+  outline: none;
+  padding: 12px 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all .4s;
+}
+
+.bidBtn:hover{
+  box-shadow: none;
+}
+
+
+
+
+
+.bid-btn:hover {
+  opacity: 0.85;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .auctions {
+    height: 1400px;
+    padding: 40px 20px;
+  }
+
+  .auctions-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .trend-aucs img{
+    display: none;
+  }
+}
+
+@media (max-width: 735px) {
+    .auctions{
+      height: 1800px;
+    }
+}
